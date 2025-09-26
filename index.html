@@ -9,16 +9,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon-128.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon-256.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
   <header class="nav">
     <div class="container nav__inner">
-      <a href="#" class="brand" aria-label="Barak Tech Group, inicio">
-        <div class="brand__mark">ב</div>
-        <div>
-          <div class="brand__name">Barak Tech Group</div>
-          <div class="brand__tag">Robótica inteligente</div>
-        </div>
+      <a href="/" class="brand" aria-label="Barak Tech Group">
+        <img src="assets/barak_logo_horizontal.png" alt="Barak Tech Group" class="brand__logo" />
       </a>
       <nav class="menu" aria-label="Principal">
         <a href="#inicio">Inicio</a>
@@ -41,8 +43,7 @@
         </div>
       </div>
       <div class="hero__card">
-        <div class="hero__img">Espacio para foto del robot</div>
-        <small class="muted">Reemplaza este recuadro por una imagen PNG del robot con fondo transparente para mejor efecto.</small>
+        <div class="hero__img"><picture><source srcset="assets/robot.webp" type="image/webp"><img src="assets/robot.png" alt="Robot de limpieza PureM1 con estación" class="hero__photo"></picture></div>
       </div>
     </div>
   </section>
@@ -128,8 +129,8 @@
         <h2 class="section__title">Contacto</h2>
         <p>Coordinemos una llamada para brindarte cotización o informes y evaluar la implementación ideal para tus espacios.</p>
         <ul class="list muted">
-          <li>📞 +52 614 178 7288</li>
-          <li>✉️ contacto@baraktechgroup.com</li>
+          <li>📞 +52 [tu número]</li>
+          <li>✉️ [tu correo]@baraktechgroup.com</li>
           <li>📍 Chihuahua, México</li>
         </ul>
       </div>

@@ -4,9 +4,7 @@
 .nav{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08);z-index:50}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;color:#e5e7eb}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
-.brand__mark{height:36px;width:36px;border-radius:10px;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:800}
-.brand__name{font-weight:800;color:#e5e7eb}
-.brand__tag{font-size:12px;color:#cbd5e1}
+.brand__logo{height:36px;width:auto;display:block}
 .menu{display:flex;gap:18px;align-items:center}
 .menu a{color:#e5e7eb;text-decoration:none}
 .menu a:hover{color:#fff}
@@ -36,5 +34,8 @@
 .footer .legal:hover{color:#fff}
 @media (max-width: 900px){
   .hero__grid, .cards, .grid-2{grid-template-columns:1fr}
-  .menu{display:none}
+  <...>
 }
+
+.hero__photo{max-width:100%;height:auto;display:block;max-height:360px;object-fit:contain}
+@media (max-width:900px){ .hero__photo{max-height:300px} }
