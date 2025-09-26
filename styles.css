@@ -4,7 +4,7 @@
 .nav{position:sticky;top:0;background:rgba(11,15,20,.7);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08);z-index:50}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;color:#e5e7eb}
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
-.brand__logo{height:120px;width:auto;display:block;background:transparent}
+.brand__logo{height:260px;width:auto;display:block;background:transparent}
 @media (max-width:1024px){ .brand__logo{height:80px} }
 @media (max-width:900px){  .brand__logo{height:60px} }
 
