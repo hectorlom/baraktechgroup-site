@@ -9,18 +9,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- FAVICONS -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
   <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon-128.png">
   <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon-256.png">
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- SEO / SOCIAL -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Barak Tech Group — Robótica inteligente">
+  <meta property="og:description" content="Automatizamos la limpieza en entornos comerciales e industriales con soluciones confiables, seguras y escalables.">
+  <meta property="og:url" content="https://baraktechgroup.com/">
+  <meta property="og:image" content="https://baraktechgroup.com/assets/robot.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Barak Tech Group — Robótica inteligente">
+  <meta name="twitter:description" content="Automatizamos la limpieza en entornos comerciales e industriales con soluciones confiables, seguras y escalables.">
+  <meta name="twitter:image" content="https://baraktechgroup.com/assets/robot.webp">
+
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S5RDL7SZ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4S5RDL7SZ3', { 'anonymize_ip': true });
+    // Para probar en tiempo real, abre tu web en incógnito y revisa Reports → Realtime en GA.
+    // Si quieres modo debug temporal:
+    // gtag('config', 'G-4S5RDL7SZ3', { 'debug_mode': true });
+  </script>
 </head>
 <body>
   <header class="nav">
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Barak Tech Group">
-       <img src="assets/barak_logo_horizontal_transparent_clean.png" alt="Barak Tech Group" class="brand__logo">      </a>
+        <img src="assets/barak_logo_horizontal_transparent_clean.png" alt="Barak Tech Group" class="brand__logo">
+      </a>
       <nav class="menu" aria-label="Principal">
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
@@ -39,10 +65,19 @@
         <div class="cta">
           <a href="#contacto" class="btn">Solicitar cotización / informes</a>
           <a href="#soluciones" class="btn btn--ghost">Conocer soluciones</a>
+          <!-- WhatsApp -->
+          <a class="btn" href="https://wa.me/526141787288?text=Hola%20Barak%20Tech%20Group,%20me%20interesa%20recibir%20informes" target="_blank" rel="noopener">
+            WhatsApp
+          </a>
         </div>
       </div>
       <div class="hero__card">
-        <div class="hero__img"><picture><source srcset="assets/robot.webp" type="image/webp"><img src="assets/robot.png" alt="Robot de limpieza PureM1 con estación" class="hero__photo"></picture></div>
+        <div class="hero__img">
+          <picture>
+            <source srcset="assets/robot.webp" type="image/webp">
+            <img src="assets/robot.png" alt="Robot de limpieza PureM1 con estación" class="hero__photo" loading="eager" />
+          </picture>
+        </div>
       </div>
     </div>
   </section>
@@ -128,22 +163,35 @@
         <h2 class="section__title">Contacto</h2>
         <p>Coordinemos una llamada para brindarte cotización o informes y evaluar la implementación ideal para tus espacios.</p>
         <ul class="list muted">
-          <li>📞 +52 [tu número]</li>
-          <li>✉️ [tu correo]@baraktechgroup.com</li>
+          <li>📞 +52 614 178 7288</li>
+          <li>✉️ contacto@baraktechgroup.com</li>
           <li>📍 Chihuahua, México</li>
         </ul>
       </div>
       <div class="card">
         <h3>Solicitar cotización / informes</h3>
-        <form method="POST" action="https://formspree.io/f/tu-endpoint" class="form">
+
+        <!-- FORM: Formspree con honeypot + mini-captcha -->
+        <form method="POST" action="https://formspree.io/f/mgvnowka" class="form">
           <input name="nombre" placeholder="Nombre completo" required />
           <input name="empresa" placeholder="Empresa" required />
           <input type="email" name="email" placeholder="Email" required />
           <input name="telefono" placeholder="Teléfono" />
-          <textarea name="mensaje" placeholder="Mensaje / Requerimiento" rows="5"></textarea>
+          <textarea name="mensaje" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
+
+          <!-- Opcionales -->
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Barak Tech Group">
+          <input type="hidden" name="_next" value="https://baraktechgroup.com/#gracias">
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <!-- Mini-captcha simple -->
+          <input name="verificacion" placeholder="¿Cuánto es 2+3?" pattern="5" required>
+
           <button class="btn" type="submit">Enviar</button>
         </form>
-        <small class="muted">Si no quieres usar Formspree aún, cambia el <code>action</code> por <code>mailto:ventas@baraktechgroup.com</code>.</small>
+        <small class="muted">Si prefieres email directo, escribe a <code>contacto@baraktechgroup.com</code>.</small>
       </div>
     </div>
   </section>
@@ -155,6 +203,23 @@
     </div>
   </footer>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <!-- Sección de GRACIAS (aparece tras el envío exitoso) -->
+  <section id="gracias" class="section white" style="display:none">
+    <div class="container">
+      <h3>¡Gracias! Hemos recibido tu mensaje.</h3>
+      <p>Te contactaremos a la brevedad en <strong>contacto@baraktechgroup.com</strong>.</p>
+    </div>
+  </section>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Mostrar #gracias si venimos con hash desde _next
+  if (location.hash === '#gracias') {
+    const g = document.querySelector('#gracias');
+    if (g) { g.style.display = 'block'; window.scrollTo({top: g.offsetTop - 80, behavior: 'smooth'}); }
+  }
+</script>
 </body>
 </html>
+
