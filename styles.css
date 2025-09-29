@@ -46,3 +46,25 @@
 
 .hero__photo{max-width:100%;height:auto;display:block;max-height:360px;object-fit:contain}
 @media (max-width:900px){ .hero__photo{max-height:300px} }
+
+.form.form--stack{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+.form.form--stack label{
+  display:grid;
+  gap:6px;
+  font-weight:600;
+  color:rgba(255,255,255,.7); /* ajusta si usas tema claro */
+}
+.form.form--stack input,
+.form.form--stack textarea{
+  width:100%;
+}
+.form.form--stack .btn{
+  justify-self:start; /* evita que el botón se estire a todo el ancho */
+}
+@media (min-width:720px){
+  .form.form--stack{ gap:14px; }
+}
