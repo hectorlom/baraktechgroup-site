@@ -68,3 +68,9 @@
 @media (min-width:720px){
   .form.form--stack{ gap:14px; }
 }
+.alt-actions{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
