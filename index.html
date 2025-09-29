@@ -171,25 +171,36 @@
       <div class="card">
         <h3>Solicitar cotización / informes</h3>
 
-        <!-- FORM: Formspree con honeypot + mini-captcha -->
-        <form method="POST" action="https://formspree.io/f/mgvnowka" class="form">
-          <input name="nombre" placeholder="Nombre completo" required />
-          <input name="empresa" placeholder="Empresa" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input name="telefono" placeholder="Teléfono" />
-          <textarea name="mensaje" placeholder="Mensaje / Requerimiento" rows="5" required></textarea>
+       
+<form method="POST" action="https://formspree.io/f/mgvnowka" class="form form--stack">
+  <label>Nombre
+    <input type="text" name="nombre" autocomplete="name" required />
+  </label>
 
-          <!-- Opcionales -->
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Barak Tech Group">
-          <input type="hidden" name="_next" value="https://baraktechgroup.com/#gracias">
+  <label>Empresa
+    <input type="text" name="empresa" autocomplete="organization" required />
+  </label>
 
-          <!-- Honeypot anti-spam -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+  <label>Correo
+    <input type="email" name="email" autocomplete="email" required />
+  </label>
 
-          <!-- Mini-captcha simple -->
-          <input name="verificacion" placeholder="¿Cuánto es 2+3?" pattern="5" required>
+  <label>Teléfono
+    <input type="tel" name="telefono" inputmode="tel" autocomplete="tel" />
+  </label>
 
-          <button class="btn" type="submit">Enviar</button>
+  <label>Mensaje
+    <textarea name="mensaje" rows="5" required></textarea>
+  </label>
+
+  <!-- Opcionales -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Barak Tech Group">
+  <input type="hidden" name="_next" value="https://baraktechgroup.com/#gracias">
+
+  <!-- Honeypot anti-spam (oculto) -->
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+  <button class="btn" type="submit">Enviar</button>
         </form>
         <small class="muted">Si prefieres email directo, escribe a <code>contacto@baraktechgroup.com</code>.</small>
       </div>
