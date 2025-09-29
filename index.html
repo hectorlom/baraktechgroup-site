@@ -41,6 +41,27 @@
     // gtag('config', 'G-4S5RDL7SZ3', { 'debug_mode': true });
   </script>
 </head>
+
+  <script>
+  // Rastrea clics a cualquier enlace de WhatsApp en la página
+  (function () {
+    var selector = 'a[href*="wa.me/"], a[href*="api.whatsapp.com/"]';
+    var links = document.querySelectorAll(selector);
+    links.forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            event_category: 'engagement',
+            event_label: el.textContent.trim() || 'whatsapp_cta',
+            link_url: el.href
+          });
+        }
+      });
+    });
+  })();
+</script>
+
+  
 <body>
   <header class="nav">
     <div class="container nav__inner">
